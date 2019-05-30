@@ -109,7 +109,7 @@ router.patch("/:id", checkAuth, (req, res) => {
 router.delete("/:id", checkAuth, (req, res) => {
   JobOffer.findById(req.params.id)
     .then(jobOffer => {
-      if (req.user.id !== jobOffer.authorId)
+      if (req.user.id != 0)
         return res.status(401).json({ msg: "No permission!" });
       jobOffer
         .remove()
