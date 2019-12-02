@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const config = require("config");
+const swaggerRouter = require('./swagger');
 
 const app = express();
 
@@ -29,9 +30,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/api/docs", swaggerRouter);
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/tags", require("./routes/api/tags"));
-app.use("/api/jobOffers", require("./routes/api/jobOffers"));
+app.use("/api/job_offers", require("./routes/api/job_offers"));
 
 app.use((req, res, next) => {
   const error = new Error("Not found");

@@ -11,11 +11,6 @@ const JobOfferSchema = new Schema({
     type: String,
     required: true
   },
-  logo: {
-    type: String,
-    required: false,
-    default: null
-  },
   position: {
     type: String,
     required: true
@@ -24,19 +19,17 @@ const JobOfferSchema = new Schema({
     type: String,
     required: true
   },
-  address: {
-    city: {
-      type: String,
-      required: true
-    },
-    street: {
-      type: String,
-      required: true
-    },
-    number: {
-      type: String,
-      required: true
-    }
+  city: {
+    type: String,
+    required: true
+  },
+  street: {
+    type: String,
+    required: true
+  },
+  number: {
+    type: String,
+    required: true
   },
   dimensions: {
     type: String,
